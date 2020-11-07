@@ -1,0 +1,27 @@
+{
+  "name": "put-a-ring-on-it",
+  "version": "1.0.0",
+  "description": "Get your self a spouse",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdrawe/put-a-ring-on-it.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdrawe/put-a-ring-on-it/issues"
+  },
+  "homepage": "https://github.com/bdrawe/put-a-ring-on-it#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
