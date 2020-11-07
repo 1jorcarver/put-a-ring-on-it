@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const { restore } = require('../../models/User');
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -49,9 +50,43 @@ router.post('/', (req, res) => {
     })
 });
 // PUT /api/users/1
-router.put('/:id', (req, res) => { });
-
+router.put('/:id', (req, res) =>  {
+    User.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserData => {
+        if(!dbUserData[0]){
+            res.status(404).json({message: "No user found with this id"});
+            return
+        }
+        res.json(dbUserData)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    })
+});
 // DELETE /api/users/1
-router.delete('/:id', (req, res) => { });
+router.delete('/:id', (req, res) => { 
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserData =>{
+        if(!dbUserData) {
+            res.status(404).json({message: "No user found with id"});
+            return
+        }
+        res.json(dbUserData)
+        console.log("Your user was destroyed!")
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err);
+    })
+});
 
 module.exports = router;
