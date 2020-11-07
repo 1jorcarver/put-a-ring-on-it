@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/bdrawe/put-a-ring-on-it/issues"
   },
-  "homepage": "https://github.com/bdrawe/put-a-ring-on-it#readme"
+  "homepage": "https://github.com/bdrawe/put-a-ring-on-it#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
 }
