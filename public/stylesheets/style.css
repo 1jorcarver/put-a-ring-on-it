@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    background-color: #FDE2D8;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #2C4323;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #090d07;
+    font-weight: bold;
+    transition: color .1s;
+  }
+  
+  a:hover {
+    color: #aecea1;
+  }
+  
+  button {
+    background-color: #F98458;
+    border: 0;
+    padding: 1%;
+    color: #F9F5F1;
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #f86d3a;
+  }
+  
+  .event-list {
+    margin: 0;
+    padding: 0;
+  }
+  
+  textarea, input {
+    padding: .5%;
+    border-radius: 5px;
+    border: 1px solid #F9F5F1;
+  }
+  
+  textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid #2C4323;
+  }
+  
+  textarea {
+    min-width: 40%;
+    min-height: 100px;
+  }
+  
+  form > div {
+    margin-bottom: 2%;
+  }
+  
+  form label {
+    display: block;
+  }
+  
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    border-bottom: 1px solid #2C4323;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+  }
+  
+  header h1 {
+    font-size: 1em;
+  }
+  
+  main {
+    flex: 1;
+    padding: 2% 4%;
+  }
+  
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #2C4323;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 16px;
+  }
+  
+  .btn-no-style:hover {
+    background: none;
+    color: #2C4323;
+  }
+  
+  .delete-event-btn {
+    background-color: #F98458;
+  }
+  
+  .delete-event-btn:hover {
+    background-color: #f86d3a;
+  }
+  
+  .event {
+    margin-bottom: 2%;
+    line-height: 150%;
+  }
+  
+  .event .title span {
+    font-style: italic;
+    font-size: 90%;
+    color: #2C4323;
+  }
+  
+  .edit-link {
+    display: block;
+    margin: -1.5% 0 2% 0;
+  }
+
+  .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .6;
+  }
+  
+  .new-event-form input {
+    width: 300px;
+  }
+  
+  .edit-event-form {
+    margin-bottom: 5%;
+  }
+  
+  footer {
+    border-top: 1px solid #2C4323;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+  }

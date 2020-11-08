@@ -56,7 +56,7 @@ router.post('/', (req, res)=> {
     Post.create ({
         title: req.body.title,
         eventdate: req.body.eventdate,
-        comments: req.body.eventdate,
+        comments: req.body.comments,
         // user_id: req.body.user_id
     })
     .then(dbPostData =>res.json(dbPostData))
