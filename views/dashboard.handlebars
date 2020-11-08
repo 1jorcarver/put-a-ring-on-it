@@ -1,0 +1,39 @@
+<section>
+    <h2>Welcome {{first-name}} Create an Event</h2>
+
+    <form class="new-event-form">
+        <div>
+            <label for="event-name">Event Name</label>
+            <input type="text" id="event-title" name="event-name" />
+        </div>
+        <div>
+            <label for="event-details">Event Details</label>
+            <input type="text" id="event-details" name="event-details" />
+        </div>
+        <div>
+            <label for="event-date">Event Date</label>
+            <input type="date" id="event-date" name="event-date" />
+        </div>
+        <div>
+            <label for="event-time">Event Time</label>
+            <input type="time" id="event-time" name="event-time" />
+        </div>
+        <button type="submit" class="btn">Create</button>
+    </form>   
+</section>
+
+{{#if events.length}}
+<section>
+  <h2>Your Events</h2>
+  <ol>
+    {{#each events as |event|}}
+    <li>
+      {{> event-info event}}
+      <a href="/dashboard/edit/{{event.id}}" class="edit-link">Edit event</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-event.js"></script>
