@@ -12,12 +12,12 @@ router.get('/', (req, res)=> {
             'comments'
         ],
         order: [['created_at', 'DESC']],
-    //     include: [
-    //     {
-    //         model: User,
-    //         attributes:['firstname','lastname']
-    //     }
-    //   ]
+        include: [
+        {
+            model: User,
+            attributes:['firstname','lastname']
+        }
+      ]
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err=> {
@@ -53,22 +53,46 @@ router.get(':/id', (req, res)=>{
 });
 
 router.post('/', (req, res)=> {
-    Post.create ({
-        title: req.body.title,
-        eventdate: req.body.eventdate,
-        comments: req.body.comments,
-        // user_id: req.body.user_id
-    })
-    .then(dbPostData =>res.json(dbPostData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err)
-    })
+    // need to code to establish user is logged in
+    // if (req.session)
+    if (req.body.dev) {
+        Post.create ({
+            title: req.body.title,
+            eventdate: req.body.eventdate,
+            comments: req.body.comments,
+            user_id: req.body.user_id
+        })
+        .then(dbPostData =>res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        })
+    } else {
+        if (req.session.user_id) {
+            Post.create ({
+                title: req.body.title,
+                eventdate: req.body.eventdate,
+                comments: req.body.comments,
+                user_id: req.session.user_id
+            })
+            .then(dbPostData =>res.json(dbPostData))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err)
+            })
+        } else {
+            res.status(403).end();
+        }
+        
+    }
+    
 })
 
 router.put(':/id', (req, res) => {
     Post.update({
-
+        title: req.body.title,
+        eventdate: req.body.eventdate,
+        comments: req.body.comments
     })
 })
 router.delete(':/id', (req, res) => {
