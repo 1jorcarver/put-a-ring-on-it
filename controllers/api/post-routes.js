@@ -1,6 +1,7 @@
-const router = require('express').Router;
+const router = require('express').Router();
 const {Post, User} = require('../../models');
 const sequelize = require('../../config/connection');
+
 
 router.get('/', (req, res)=> {
     Post.findAll ({
@@ -11,10 +12,12 @@ router.get('/', (req, res)=> {
             'comments'
         ],
         order: [['created_at', 'DESC']],
-        include: {
+        include: [
+        {
             model: User,
             attributes:['firstname','lastname']
         }
+      ]
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err=> {
@@ -34,4 +37,6 @@ router.post('/', (req, res)=> {
 router.put(':/id', (req, res) => {
 
 })
+
+module.exports = router;
 
