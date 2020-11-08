@@ -21,7 +21,7 @@ Post.init(
         },
         comments: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         }
     },
     {
