@@ -5,6 +5,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const logger = require('morgan');
 const hbs = exphbs.create({});
 
 const app = express();
@@ -26,6 +27,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(logger('dev'));
 
 // turn on routes
 app.use(routes);
