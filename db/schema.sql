@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS ring_db;
+
+CREATE DATABASE ring_db;
