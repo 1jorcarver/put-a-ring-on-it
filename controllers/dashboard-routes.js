@@ -6,7 +6,7 @@ const { Post, user} = require('./../models');
 router.get('/', (res, req)=>{
     Post.findAll({
         where: {
-            user_id: req.session.user_id
+            user_id: req.body.user_id
         },
         attributes:
             ["title","eventdate","comments"],
