@@ -1,0 +1,25 @@
+<article>
+    <a href = "/dashboard"> &larr; Back to your events</a>
+    <h2>
+        Edit Event
+    </h2>
+    <form class = "edit-event-form">
+        <div>
+            <input name = "event-name" type = "text" value="{{event.name}}"/>
+        </div>
+        <div>
+            <input name = "event-details" type = "text" value="{{event.details}}"/>
+        </div>
+        <div>
+            <input name = "event-date" type = "date" value="{{event.date}}"/>
+        </div>
+        <div>
+            <input name = "event-time" type = "time" value="{{event.time}}"/>
+        </div>
+        <button type = "submit">Save event</button>
+        <button type = "button" class="delete-event-btn">Delete event</button>
+    </form>
+</article>
+
+<script src="/javascripts/edit-event.js"></script>
+<script src="/javascripts/delete-event.js"></script>
