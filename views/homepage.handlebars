@@ -1,46 +1,43 @@
 <div class="wrapper">
-            <header>
-                <h1>
-                    Hello, {{firstName}}! Let's plan your wedding!
-                </h1>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">Your Events</a>
-                <button id="logout" class="btn-no-style">Log out</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
-            </nav>
-                
-            </header>
+    <header>
+        <h1>
+            Welcome! Sign up or Login to get your wedding plans scheduled!
+        </h1>
+    <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">Your Events</a>
+        <button id="logout" class="btn-no-style">Log out</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+    </nav>
+        
+    </header>
 
-            <form class="signup-form">
-            <div>
-                <label for="firstName-signup">First Name:</label>
-                <input type="text" id="firstName-signup" />
-            </div>
-            <div>
-                <label for="lastName-signup">Last Name:</label>
-                <input type="text" id="lastName-signup" />
-            </div>
-            <div>
-                <label for="email-signup">email:</label>
-                <input type="text" id="email-signup" />
-            </div>
-            <div>
-                <label for="password-signup">password:</label>
-                <input type="password" id="password-signup" />
-            </div>
-            <div>
-                <button type="submit">signup</button>
-            </div>
-            </form>
-            
-            <main>
-                {{{ body }}}
-            </main>
-            <footer>
-                Planning a wedding has never been easier!!
-            </footer>
+    <form class="signup-form">
+    <div>
+        <label for="firstName-signup">First Name:</label>
+        <input type="text" id="firstName-signup" />
+    </div>
+    <div>
+        <label for="lastName-signup">Last Name:</label>
+        <input type="text" id="lastName-signup" />
+    </div>
+    <div>
+        <label for="email-signup">Email:</label>
+        <input type="email" id="email-signup" />
+    </div>
+    <div>
+        <label for="password-signup">Password:</label>
+        <input type="password" id="password-signup" />
+    </div>
+    <div>
+        <button type="submit">Sign up</button>
+    </div>
+    </form>
+    
+    <footer>
+        Planning a wedding has never been easier! Create an event to see for yourself!
+    </footer>
 </div>
 <script src="/javascripts/login.js"></script> 
