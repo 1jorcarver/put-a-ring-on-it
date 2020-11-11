@@ -21,7 +21,8 @@ router.get('/', (req, res)=>{
         console.log(posts);
         res.render('dashboard', {
             posts,
-            firstname: req.session.firstname
+            firstname: req.session.firstname,
+            loggedIn: req.session.loggedIn
         })
     })
     .catch(err => {
