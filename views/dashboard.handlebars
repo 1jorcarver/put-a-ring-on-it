@@ -2,14 +2,14 @@
   <h1>You are now on the dashboard</h1>
     <h2>Welcome {{first-name}} Create an Event</h2>
 
-    <form class="new-event-form">
+    <form class="new-post-form">
         <div>
             <label for="event-name">Event Name</label>
-            <input type="text" id="event-title" name="event-name" />
+            <input type="text" id="event-name" name="event-name" />
         </div>
         <div>
-            <label for="event-details">Event Details</label>
-            <input type="text" id="event-details" name="event-details" />
+            <label for="event-comments">Comments</label>
+            <input type="text" id="event-comments" name="event-comments" />
         </div>
         <div>
             <label for="event-date">Event Date</label>
@@ -19,7 +19,7 @@
             <label for="event-time">Event Time</label>
             <input type="time" id="event-time" name="event-time" />
         </div>
-        <button type="submit" class="btn">Create</button>
+        <button type="submit"  class="btn">Create</button>
     </form>   
 </section>
 
@@ -37,4 +37,4 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-event.js"></script>
+<script src="/javascripts/add-post.js"></script>

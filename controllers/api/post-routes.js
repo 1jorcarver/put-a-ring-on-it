@@ -54,20 +54,21 @@ router.get(':/id', (req, res)=>{
 
 router.post('/', withAuth, (req, res)=> {
     // need to code to establish user is logged in
-    // if (req.session)
-    if (req.body.dev) {
-        Post.create ({
-            title: req.body.title,
-            eventdate: req.body.eventdate,
-            comments: req.body.comments,
-            user_id: req.body.user_id
-        })
-        .then(dbPostData =>res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err)
-        })
-    } else {
+    console.log(req.session);
+    if (req.session)
+    // if (req.body.dev) {
+    //     Post.create ({
+    //         title: req.body.title,
+    //         eventdate: req.body.eventdate,
+    //         comments: req.body.comments,
+    //         user_id: req.body.user_id
+    //     })
+    //     .then(dbPostData =>res.json(dbPostData))
+    //     .catch(err => {
+    //         console.log(err);
+    //         res.status(500).json(err)
+    //     })
+    // } else {
         if (req.session.user_id) {
             Post.create ({
                 title: req.body.title,
@@ -84,9 +85,7 @@ router.post('/', withAuth, (req, res)=> {
             res.status(403).end();
         }
         
-    }
-    
-})
+    })
 
 router.put(':/id', withAuth, (req, res) => {
     Post.update({
