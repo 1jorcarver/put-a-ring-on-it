@@ -1,23 +1,24 @@
 const router = require('express').Router()
 const sequelize = require('../config/connection');
-const { Post, user} = require('./../models');
+const { Post, User} = require('./../models');
 // const router = require('./api/user-routes');
 
-router.get('/', (res, req)=>{
+router.get('/', (req, res)=>{
+    console.log(req.session.sid)
     Post.findAll({
         where: {
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         },
         attributes:
             ["title","eventdate","comments"],
         include: [{
-            model: user,
-            attributes: ['user-id','firstname','lastname']
+            model: User,
+            attributes: ['id','firstname','lastname']
         }]
     })
     .then(dbPostdata => {
-        const posts = dbPostdata.map(post=>post.get({plain:true}));
-        res.render('dashboard', {posts})
+        // const posts = dbPostdata.map(post=>post.get({plain:true}));
+        res.render('dashboard')
     })
     .catch(err => {
         console.log(err);

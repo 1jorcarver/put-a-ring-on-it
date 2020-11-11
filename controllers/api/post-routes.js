@@ -54,6 +54,7 @@ router.get(':/id', (req, res)=>{
 
 router.post('/', (req, res)=> {
     // need to code to establish user is logged in
+    console.log(req.session);
     if (req.session)
     // if (req.body.dev) {
     //     Post.create ({
