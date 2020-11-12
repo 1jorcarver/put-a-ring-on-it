@@ -1,4 +1,4 @@
-const messagebird = require('messagebird')('fCrOdnoppwMrNqeNvAFAYWV6j');
+const messagebird = require('messagebird')(process.env.MESS_API_KEY);
 
 const sendMessage = function(textMessage) {
   console.log(textMessage);
