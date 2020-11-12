@@ -1,39 +1,40 @@
 <section>
-    <h1>Welcome to the dashboard {{firstname}}. Create an Event!</h1>
+  <h1>Welcome to the dashboard {{firstname}}. Create an Event!</h1>
 
-    <form class="new-post-form">
-        <div>
-            <label for="event-name">Event Name</label>
-            <input type="text" id="event-name" name="event-name" />
-        </div>
-        <div>
-            <label for="event-comments">Comments</label>
-            <input type="text" id="event-comments" name="event-comments" />
-        </div>
-        <div>
-            <label for="event-date">Event Date</label>
-            <input type="date" id="event-date" name="event-date" />
-        </div>
-        <div>
-            <label for="event-time">Event Time</label>
-            <input type="time" id="event-time" name="event-time" />
-        </div>
-        <button type="submit"  class="btn">Create</button>
-    </form>   
+  <form class="new-post-form">
+    <div>
+      <label for="event-name">Event Name</label>
+      <input type="text" id="event-name" name="event-name" />
+    </div>
+    <div>
+      <label for="event-comments">Comments</label>
+      <input type="text" id="event-comments" name="event-comments" />
+    </div>
+    <div>
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" />
+    </div>
+    <div>
+      <label for="event-time">Event Time</label>
+      <input type="time" id="event-time" name="event-time" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
 </section>
 
-{{#if events.length}}
+{{#if posts.length}}
 <section>
   <h2>Your Events</h2>
   <ol>
-    {{#each events as |event|}}
-    <li>
-      {{> event-info event}}
-      <a href="/dashboard/edit/{{event.id}}" class="edit-link">Edit event</a>
-    </li>
+    {{#each posts}}
+
+    {{> event-info }}
+
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/javascripts/add-post.js"></script>
+<script src="/javascripts/create-event.js"></script>

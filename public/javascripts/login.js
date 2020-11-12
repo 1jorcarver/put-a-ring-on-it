@@ -13,8 +13,9 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
+        console.log(response);
         if (response.ok) {
-            document.location.replace('/dashboard')
+            document.location = '/dashboard'
         } else {
             document.location.replace('/')
             alert(response.statusText);
