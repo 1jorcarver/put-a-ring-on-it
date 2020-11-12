@@ -16,13 +16,14 @@ Post.init(
             allowNull: false
         },
         eventdate: {
-            type: DataTypes.DATEONLY, //DATE without time
+            type: DataTypes.DATE, 
             allowNull: false
         },
         comments: {
             type: DataTypes.STRING,
             allowNull: false
         }
+
     },
     {
         sequelize,
