@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {Post, User} = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
+const sendMessage = require('../../send_sms.js');
 
 router.get('/', (req, res)=> {
     Post.findAll ({
@@ -55,28 +56,20 @@ router.get(':/id', (req, res)=>{
 router.post('/', withAuth, (req, res)=> {
     // need to code to establish user is logged in
     console.log(req.session);
+    const textMessage = req.body.textMessage
     if (req.session)
-    // if (req.body.dev) {
-    //     Post.create ({
-    //         title: req.body.title,
-    //         eventdate: req.body.eventdate,
-    //         comments: req.body.comments,
-    //         user_id: req.body.user_id
-    //     })
-    //     .then(dbPostData =>res.json(dbPostData))
-    //     .catch(err => {
-    //         console.log(err);
-    //         res.status(500).json(err)
-    //     })
-    // } else {
         if (req.session.user_id) {
             Post.create ({
                 title: req.body.title,
-                eventdate: req.body.eventdate,
+                eventdate: req.body.eventdatetime,
                 comments: req.body.comments,
                 user_id: req.session.user_id
             })
-            .then(dbPostData =>res.json(dbPostData))
+            
+            .then(dbPostData =>{
+                // sendMessage(textMessage);
+                res.json(dbPostData)
+            })
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err)
