@@ -1,5 +1,5 @@
 <section>
-    <h1>Welcome to the dashboard {{firstname}}. Create an Event!</h1>
+  <h1>Welcome to the dashboard {{firstname}}. Create an Event!</h1>
 
     <form class="new-post-form">
         <div>
@@ -27,18 +27,19 @@
     </form>   
 </section>
 
-{{#if events.length}}
+{{#if posts.length}}
 <section>
   <h2>Your Events</h2>
   <ol>
-    {{#each events as |event|}}
-    <li>
-      {{> event-info event}}
-      <a href="/dashboard/edit/{{event.id}}" class="edit-link">Edit event</a>
-    </li>
+    {{#each posts}}
+
+    {{> event-info }}
+
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/javascripts/add-post.js"></script>
+<script src="/javascripts/create-event.js"></script>
