@@ -1,25 +1,30 @@
 <section>
   <h1>Welcome to the dashboard {{firstname}}. Create an Event!</h1>
 
-  <form class="new-post-form">
-    <div>
-      <label for="event-name">Event Name</label>
-      <input type="text" id="event-name" name="event-name" />
-    </div>
-    <div>
-      <label for="event-comments">Comments</label>
-      <input type="text" id="event-comments" name="event-comments" />
-    </div>
-    <div>
-      <label for="event-date">Event Date</label>
-      <input type="date" id="event-date" name="event-date" />
-    </div>
-    <div>
-      <label for="event-time">Event Time</label>
-      <input type="time" id="event-time" name="event-time" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+    <form class="new-post-form">
+        <div>
+            <label for="event-name">Event Name ✨</label>
+            <input type="text" id="event-name" name="event-name" />
+        </div>
+        <div>
+            <label for="event-comments">Description ✔</label>
+            <input type="text" id="event-comments" name="event-comments" />
+        </div>
+        <div>
+            <label for="event-date">Event Date 🗓 </label>
+            <input type="date" id="event-date" name="event-date" />
+        </div>
+        <div>
+            <label for="event-time">Event Time 🎉</label>
+            <input type="time" id="event-time" name="event-time" />
+        </div>
+        <div>
+            <label for="text-message">Phone Number 📱 </label>
+            <p style="font-size: 15px; opacity: 50%;">We will send you a reminder text a day before your event.</p>
+            <input type="phone" id="text-message" name="text-message" placeholder="Ex. 18005556666" />
+        </div>
+        <button type="submit"  class="btn">Create</button>
+    </form>   
 </section>
 
 {{#if posts.length}}
