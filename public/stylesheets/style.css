@@ -120,6 +120,12 @@ main {
   margin-left: 16px;
 }
 
+.btn:hover,
+.btn:focus {
+    filter: brightness(120%);
+    box-shadow: 4px 2px 5px #000;
+}
+
 .btn-no-style:hover {
   background: none;
   color: #2C4323;
