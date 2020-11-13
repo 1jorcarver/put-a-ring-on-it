@@ -39,12 +39,6 @@ router.get(':/id', (req, res)=>{
             'comments'
         ],
         order: [['created_at', 'DESC']],
-    //     include: [
-    //     {
-    //         model: User,
-    //         attributes:['user_id','firstname','lastname']
-    //     }
-    //   ]
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err=> {

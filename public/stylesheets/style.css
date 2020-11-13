@@ -200,3 +200,11 @@ footer {
   font-size: 110%;
   font-weight: bolder;
 }
+
+.signup-form {
+  padding: 20px;
+}
+
+.btn-login {
+  padding: 20px;
+}
