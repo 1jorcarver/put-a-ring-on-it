@@ -155,6 +155,29 @@ main {
   opacity: .6;
 }
 
+article {
+  padding: 10px 20px;
+  margin: 15px 0;
+  background-color: white;
+  color: #3e3e3e;
+}
+
+article blockquote {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+
+.title h2 small {
+  background-color: #F98458;
+  color: white;
+  padding: 7px;
+  font-size: 0.45em;
+  border-radius: 100px;
+  position: relative;
+  top: -3px;
+}
+
 .new-event-form input {
   width: 300px;
 }
