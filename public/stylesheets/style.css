@@ -99,6 +99,10 @@ header {
 
 header h1 {
   font-size: 1.3em;
+  
+}
+h1 , h4 {
+  text-align: center;
 }
 
 
@@ -180,6 +184,7 @@ article blockquote {
 
 .new-event-form input {
   width: 300px;
+ 
 }
 
 .edit-event-form {
@@ -194,3 +199,4 @@ footer {
   font-size: 110%;
   font-weight: bolder;
 }
+
