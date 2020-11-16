@@ -16,19 +16,19 @@
     <img src="https://img.shields.io/badge/dotenv-green" />
 </p>
 
-## Link to Deployed Application on Heroku
-["Put-A-Ring-On-It"](https://put-a-ring-on-it.herokuapp.com)
-
 ## Description 
 
 Find a spouse with this wedding planner app! The app is a full-stack application deployed using Heroku. 
 
-![Screen Shot]()
-![Screen Shot]()
+![Screenshot SignUp](public/images/project-2-signup.png)
+![Screenshot Event Creation](public/images/project-2-event.png)
 
 ## Demo
 
-[Link to the YouTube Demo]()
+[Link to the YouTube Demo](https://youtu.be/bWwcJCBLOYI)
+
+## Link to Deployed Application on Heroku
+[Put A Ring On It | Wedding Planner](https://put-a-ring-on-it.herokuapp.com)
 
 ## Table of Contents
 * [Technologies](#technologies)
@@ -43,10 +43,10 @@ Find a spouse with this wedding planner app! The app is a full-stack application
 - Handlebars 
 - Heroku 
 - Node.js
-- Message Bird
+- MessageBird
 
 ## Installation
-- npm install mysql2 sequelize express handlebars dotenv morgan
+- npm install mysql2 sequelize express handlebars dotenv morgan messagebird
 - npm install -g heroku
 - heroku --version
 - heroku create
@@ -55,11 +55,12 @@ Find a spouse with this wedding planner app! The app is a full-stack application
 - Connect to MySQL in the terminal. 
 - Use MySQL shell commands:
     - source db/schema.sql
-    - use ring_db
+    - use the database: "ring_db"
 - Use NPM start
-- Use Insomnia to run CRUD tests on PORT, localhost:3001
+- Go to PORT localhost:3001
 
 ## Credits
+- Group collaboration
 - Trilogy Course Material, Instructor, and TAs
 
 ## Contributors
@@ -68,7 +69,7 @@ Find a spouse with this wedding planner app! The app is a full-stack application
 - [bdrawe](https://github.com/bdrawe)
 - [salgorog](https://github.com/salgorog)
 
-*Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.*
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
