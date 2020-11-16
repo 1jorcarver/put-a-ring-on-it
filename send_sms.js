@@ -1,12 +1,12 @@
 const messagebird = require('messagebird')(process.env.MESS_API_KEY);
 
-const sendMessage = function(textMessage, eventdate, title) {
+const sendMessage = function(textMessage) {
   console.log(textMessage);
   return messagebird.messages.create({
   originator : '55555',
   recipients : [ textMessage ] ,
-  scheduledDatetime: eventdate.setHours(eventdate.gethour() - 24),
-  body : 'Your event, ' + title + 'is coming up!'
+  // scheduledDatetime: eventdate.setHours(eventdate.gethour() - 24),
+  body : 'Hello! My name is Murphy, your wedding planner! '
   
 },
   function(err, response) {
