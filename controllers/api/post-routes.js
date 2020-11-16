@@ -61,7 +61,7 @@ router.post('/', withAuth, (req, res)=> {
             })
             
             .then(dbPostData =>{
-                sendMessage(textMessage, eventdate, title);
+                sendMessage(textMessage);
                 res.json(dbPostData)
             })
             .catch(err => {
